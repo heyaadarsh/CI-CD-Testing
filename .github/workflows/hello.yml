@@ -1,5 +1,13 @@
 name: hello-world
-'on': push
+
+on:
+  push:
+  pull_request:
+    branches: [ "main" ]
+    types: [ "opened", "synchronize" ]
+  check_suite:
+    types: [requested]
+
 jobs:
   hello-world-job:
     runs-on: ubuntu-latest
